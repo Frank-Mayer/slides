@@ -1,0 +1,49 @@
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Setup Node
+        uses: actions/setup-node@v4.0.0
+        with: 
+          node-version: lts/*
+      - name: Build Markdown slides
+        run: |
+          '<h1>Slides</h1>' > index.html
+          "<ul>" >> index.html
+          for f in **/*.md; do
+            npx @marp-team/marp-cli@latest --allow-local-files "$f" -o "${f%.md}.pdf"
+            npx @marp-team/marp-cli@latest --allow-local-files "$f" -o "${f%.md}.html"
+            "<li><a href='${f%.md}.pdf'>${f%.md}.pdf</a></li>" >> index.html
+            "<li><a href='${f%.md}.html'>${f%.md}.html</a></li>" >> index.html
+          done
+          "</ul>" >> index.html
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v3
