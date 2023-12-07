@@ -31,15 +31,21 @@ jobs:
           node-version: lts/*
       - name: Build Markdown slides
         run: |
-          '<h1>Slides</h1>' > index.html
-          "<ul>" >> index.html
+          echo '<!DOCTYPE html>' >> index.html
+          echo '<html lang="de-DE"><head>' >> index.html
+          echo '<title>Slides</title>' >> index.html
+          echo '<style>:root{color-scheme: light dark; font-family: sans-serif;}</style>' >> index.html
+          echo '</head><body>' >> index.html
+          echo '<h1>Slides</h1>' > index.html
+          echo '<ul>' >> index.html
           for f in **/*.md; do
             npx @marp-team/marp-cli@latest --allow-local-files "$f" -o "${f%.md}.pdf"
             npx @marp-team/marp-cli@latest --allow-local-files "$f" -o "${f%.md}.html"
-            "<li><a href='${f%.md}.pdf'>${f%.md}.pdf</a></li>" >> index.html
-            "<li><a href='${f%.md}.html'>${f%.md}.html</a></li>" >> index.html
+            echo "<li><a href='${f%.md}.pdf'>${f%.md}.pdf</a></li>" >> index.html
+            echo "<li><a href='${f%.md}.html'>${f%.md}.html</a></li>" >> index.html
           done
-          "</ul>" >> index.html
+          echo '</ul>' >> index.html
+          echo '</body></html>' >> index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
