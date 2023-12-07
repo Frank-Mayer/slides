@@ -5,6 +5,7 @@ graph TD;
     uae["Unreal Audio Engine"]
     input["Unreal Input System"]
     raw_input["Raw Input"]
+    direct_input["Direct Input"]
     my_game-->ue
     ue-->rhi
     ue-->uae
@@ -17,4 +18,5 @@ graph TD;
     uae-->WASAPI
     uae-->OpenAL
     input-->XInput
+    input-->direct_input
     input-->raw_input
