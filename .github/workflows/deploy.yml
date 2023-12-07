@@ -40,7 +40,7 @@ jobs:
           echo '<ul>' >> index.html
           for f in **/*.md; do
             npx @marp-team/marp-cli@latest --allow-local-files "$f" -o "${f%.md}.pdf"
-            npx @marp-team/marp-cli@latest --allow-local-files "$f" -o "${f%.md}.html"
+            npx @marp-team/marp-cli@latest --theme './themes/rose_pine.css' --allow-local-files "$f" -o "${f%.md}.html"
             echo "<li><a href='${f%.md}.pdf'>${f%.md}.pdf</a></li>" >> index.html
             echo "<li><a href='${f%.md}.html'>${f%.md}.html</a></li>" >> index.html
           done

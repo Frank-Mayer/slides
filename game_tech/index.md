@@ -1,3 +1,11 @@
+---
+marp: true
+---
+
 # Game Tech
 
-wip
+---
+
+## Links
+
+![](./slides-qr.png)
