@@ -1,0 +1,20 @@
+graph TD;
+    my_game["Mein Spiel"]
+    ue["Unreal Engine"]
+    rhi["Rendering Hardware Interface"]
+    uae["Unreal Audio Engine"]
+    input["Unreal Input System"]
+    raw_input["Raw Input"]
+    my_game-->ue
+    ue-->rhi
+    ue-->uae
+    ue-->input
+    rhi-->Vulkan
+    rhi-->DirectX
+    rhi-->OpenGL
+    rhi-->Metal
+    rhi-->WebGL
+    uae-->WASAPI
+    uae-->OpenAL
+    input-->XInput
+    input-->raw_input

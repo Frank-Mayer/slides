@@ -29,6 +29,15 @@ jobs:
         uses: actions/setup-node@v4.0.0
         with: 
           node-version: lts/*
+      - name: Install dependencies
+        run: |
+          npm install -g @mermaid-js/mermaid-cli
+          npm install -g @marp-team/marp-cli
+      - name: Compile Mermaid
+        run: |
+          for f in **/*.mermaid; do
+            mmdc -i "$f" -o "${f%.mermaid}.svg" -b transparent
+          done
       - name: Build Markdown slides
         run: |
           echo '<!DOCTYPE html>' >> index.html
@@ -39,10 +48,9 @@ jobs:
           echo '<h1>Slides</h1>' > index.html
           echo '<ul>' >> index.html
           for f in **/*.md; do
-            npx @marp-team/marp-cli@latest --allow-local-files "$f" -o "${f%.md}.pdf"
-            npx @marp-team/marp-cli@latest --theme './themes/rose_pine.css' --allow-local-files "$f" -o "${f%.md}.html"
+            marp --allow-local-files "$f" -o "${f%.md}.pdf"
+            marp --theme './themes/rose-pine-dawn.css' --allow-local-files "$f" -o "${f%.md}.html"
             echo "<li><a href='${f%.md}.pdf'>${f%.md}.pdf</a></li>" >> index.html
-            echo "<li><a href='${f%.md}.html'>${f%.md}.html</a></li>" >> index.html
           done
           echo '</ul>' >> index.html
           echo '</body></html>' >> index.html
