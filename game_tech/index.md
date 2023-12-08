@@ -40,6 +40,42 @@ Welche Technologien stecken hinter Computerspielen?
 
 ---
 
+## RayLib
+
+- Higher level
+
+---
+
+## Eigene Engine: Pro
+
+- Individuelle Anpassung
+- Optimierung
+- Lernmöglichkeiten
+- Flexibilität
+
+---
+
+## Eigene Engine: Contra
+
+- Zeitaufwand
+- Kosten
+- Aktualisierungen und Support
+- Risiken
+
+---
+
+## Firmen mit eigener Engine
+
+- id Software
+- CD Project Red
+- Supermassive Games
+- From Software
+- Riot Games
+- Valve Corporation
+- Epic Games
+
+---
+
 ## Links
 
 - LinkedIn: [frank-mayer-de](https://www.linkedin.com/in/frank-mayer-de/)
