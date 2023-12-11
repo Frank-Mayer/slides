@@ -12,8 +12,8 @@ Welche Technologien stecken hinter Computerspielen?
 ## Wer bin ich?
 
 - Frank Mayer
+- 6 Jahre Softwareentwickler
 - Tools & Web developer
-- 6 Jahre Erfahrung
 
 ---
 
@@ -43,6 +43,13 @@ Welche Technologien stecken hinter Computerspielen?
 ## RayLib
 
 - Higher level
+- In C geschrieben
+- Cross-platform (Linux, Windows, Mac, iOS, Android, HTML5)
+- Bindings für viele Sprachen
+
+---
+
+![bg contain](https://raw.githubusercontent.com/raysan5/raylib.com/master/images/raylib_architecture_v4.5.png)
 
 ---
 
