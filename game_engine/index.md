@@ -44,3 +44,5 @@ Frank Mayer
 ---
 
 ## Links
+
+![](./slides-qr.png)
