@@ -20,8 +20,23 @@ Frank Mayer
 ## Warum?
 
 - Kann ich es besser als etablierte Engines?
-- Wie viele sind noch so verrückt?
 - Warum Go?
+
+---
+
+## Was ist ein Shader
+
+- Programm für die GPU
+- GLSL, ESSL, HLSL, MSL, ...
+- Mehrere APIs für Betriebssysteme
+
+---
+
+## Was ist OpenGL, Vulkan, DirextX und Metal?
+
+- Kein Programm/Software
+- Hardware interface
+- Standartisierung
 
 ---
 
@@ -46,10 +61,11 @@ Frank Mayer
 
 ---
 
-## Alternativen
+## Alternativen zu OpenGL, Vulkan, ...
 
-- raylib
 - SDL
+- raylib
+- Dawn
 
 ---
 
@@ -73,6 +89,17 @@ Frank Mayer
 
 ---
 
+## Dawn
+
+[dawn.googlesource.com/dawn](https://dawn.googlesource.com/dawn)
+
+- Googles native WebGPU-Implementierung
+- Zwischenlayer zu hardware **grafik** APIs
+- [Tint](https://dawn.googlesource.com/tint) Compiler von und zu [WGSL](https://www.w3.org/TR/WGSL/)
+- C++ Library
+
+---
+
 ## Text rendern
 
 ---
@@ -85,8 +112,9 @@ Frank Mayer
 
 - Individuelle Anpassung
 - Optimierung
-- Lernmöglichkeiten
 - Flexibilität
+- Lernmöglichkeiten
+- 3rd Party Engines veralten, Portierung in Zukunft wird erschwert
 
 ---
 
@@ -109,6 +137,8 @@ Frank Mayer
 - **Valve Corporation** Source
 - **Epic Games** Unreal
 - **Remedy** Northlight
+- **Thekla**
+- **Cry Tech** Cry Engine
 
 ---
 
