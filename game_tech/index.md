@@ -75,11 +75,12 @@ Welche Technologien stecken hinter Computerspielen?
 
 - id Software
 - CD Project Red
-- Supermassive Games
+- Massive Entertainment
 - From Software
 - Riot Games
 - Valve Corporation
 - Epic Games
+- Remedy
 
 ---
 
