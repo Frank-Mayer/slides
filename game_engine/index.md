@@ -313,7 +313,7 @@ void main()
 
 - **id Software** id Tech
 - **CD Project Red** red
-- **Massive Entertainment** Snowdrow
+- **Massive Entertainment** Snowdrop
 - **From Software** Dantelion (inoffiziell)
 - **Riot Games**
 - **Valve Corporation** Source
